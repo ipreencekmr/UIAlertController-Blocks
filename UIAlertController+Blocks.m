@@ -27,6 +27,7 @@
 //
 
 #import "UIAlertController+Blocks.h"
+#import "UIAlertController+Window.h"
 
 static NSInteger const UIAlertControllerBlocksCancelButtonIndex = 0;
 static NSInteger const UIAlertControllerBlocksDestructiveButtonIndex = 1;
@@ -39,6 +40,46 @@ static NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 2;
 @end
 
 @implementation UIAlertController (Blocks)
+
++ (nonnull instancetype)showWithTitle:(nullable NSString *)title
+                              message:(nullable NSString *)message
+                    cancelButtonTitle:(nullable NSString *)cancelButtonTitle
+                    otherButtonTitles:(nullable NSArray *)otherButtonTitles
+                             tapBlock:(nullable UIAlertControllerCompletionBlock)tapBlock {
+
+     UIAlertController *strongController = [self alertControllerWithTitle:title
+                                                                 message:message
+                                                          preferredStyle:UIAlertControllerStyleAlert];
+    
+    __weak UIAlertController *controller = strongController;
+    
+    if (cancelButtonTitle) {
+        UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:cancelButtonTitle
+                                                               style:UIAlertActionStyleCancel
+                                                             handler:^(UIAlertAction *action){
+                                                                 if (tapBlock) {
+                                                                     tapBlock(controller, action, UIAlertControllerBlocksCancelButtonIndex);
+                                                                 }
+                                                             }];
+        [controller addAction:cancelAction];
+    }
+    
+    for (NSUInteger i = 0; i < otherButtonTitles.count; i++) {
+        NSString *otherButtonTitle = otherButtonTitles[i];
+        
+        UIAlertAction *otherAction = [UIAlertAction actionWithTitle:otherButtonTitle
+                                                              style:UIAlertActionStyleDefault
+                                                            handler:^(UIAlertAction *action){
+                                                                if (tapBlock) {
+                                                                    tapBlock(controller, action, UIAlertControllerBlocksFirstOtherButtonIndex + i);
+                                                                }
+                                                            }];
+        [controller addAction:otherAction];
+    }
+    
+    [controller show:true];
+    return controller;
+}
 
 + (instancetype)showInViewController:(UIViewController *)viewController
                            withTitle:(NSString *)title
@@ -98,9 +139,8 @@ static NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 2;
         popoverPresentationControllerBlock(controller.popoverPresentationController);
     }
 #endif
-    
+
     [viewController.uacb_topmost presentViewController:controller animated:YES completion:nil];
-    
     return controller;
 }
 

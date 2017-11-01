@@ -35,6 +35,12 @@ typedef void (^UIAlertControllerCompletionBlock) (UIAlertController * __nonnull 
 
 @interface UIAlertController (Blocks)
 
++ (nonnull instancetype)showWithTitle:(nullable NSString *)title
+                              message:(nullable NSString *)message
+                    cancelButtonTitle:(nullable NSString *)cancelButtonTitle
+                    otherButtonTitles:(nullable NSArray *)otherButtonTitles
+                             tapBlock:(nullable UIAlertControllerCompletionBlock)tapBlock;
+
 + (nonnull instancetype)showInViewController:(nonnull UIViewController *)viewController
                                    withTitle:(nullable NSString *)title
                                      message:(nullable NSString *)message

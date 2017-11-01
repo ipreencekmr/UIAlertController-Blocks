@@ -22,6 +22,7 @@
 		947490611D5BD8BC00D606FB /* UIAlertController+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B2A8821A18CB60002602A4 /* UIAlertController+Blocks.m */; };
 		947490621D5BDAA500D606FB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 944A455919C14996001A402B /* AppDelegate.m */; };
 		947490631D5BDAA700D606FB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 944A455C19C14996001A402B /* ViewController.m */; };
+		947A51FC1FA9A0B500D79049 /* UIAlertController+Window.m in Sources */ = {isa = PBXBuildFile; fileRef = 947A51FB1FA9A0B400D79049 /* UIAlertController+Window.m */; };
 		94B2A8831A18CB60002602A4 /* UIAlertController+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B2A8821A18CB60002602A4 /* UIAlertController+Blocks.m */; };
 		94B2A8841A18CB60002602A4 /* UIAlertController+Blocks.m in Sources */ = {isa = PBXBuildFile; fileRef = 94B2A8821A18CB60002602A4 /* UIAlertController+Blocks.m */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,8 @@
 		947490591D5BD89B00D606FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9474905B1D5BD89B00D606FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9474905D1D5BD89B00D606FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		947A51FA1FA9A0B400D79049 /* UIAlertController+Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertController+Window.h"; path = "../UIAlertController+Window.h"; sourceTree = "<group>"; };
+		947A51FB1FA9A0B400D79049 /* UIAlertController+Window.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertController+Window.m"; path = "../UIAlertController+Window.m"; sourceTree = "<group>"; };
 		94B2A8811A18CB60002602A4 /* UIAlertController+Blocks.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIAlertController+Blocks.h"; path = "../UIAlertController+Blocks.h"; sourceTree = "<group>"; };
 		94B2A8821A18CB60002602A4 /* UIAlertController+Blocks.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIAlertController+Blocks.m"; path = "../UIAlertController+Blocks.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,6 +92,8 @@
 		944A454819C14996001A402B = {
 			isa = PBXGroup;
 			children = (
+				947A51FA1FA9A0B400D79049 /* UIAlertController+Window.h */,
+				947A51FB1FA9A0B400D79049 /* UIAlertController+Window.m */,
 				94B2A8811A18CB60002602A4 /* UIAlertController+Blocks.h */,
 				94B2A8821A18CB60002602A4 /* UIAlertController+Blocks.m */,
 				944A455319C14996001A402B /* UIAlertControllerBlocks */,
@@ -302,6 +307,7 @@
 			files = (
 				945D806D1DB8CE9100283692 /* SecondViewController.m in Sources */,
 				94B2A8831A18CB60002602A4 /* UIAlertController+Blocks.m in Sources */,
+				947A51FC1FA9A0B500D79049 /* UIAlertController+Window.m in Sources */,
 				944A455D19C14996001A402B /* ViewController.m in Sources */,
 				944A455A19C14996001A402B /* AppDelegate.m in Sources */,
 				944A455719C14996001A402B /* main.m in Sources */,

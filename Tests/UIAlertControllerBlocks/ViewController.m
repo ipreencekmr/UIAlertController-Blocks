@@ -35,8 +35,11 @@
     return self;
 }
 
-- (IBAction)showAlert:(id)sender
-{
+- (IBAction)showAlert:(id)sender {
+    
+    [UIAlertController showWithTitle:@"T TEST Alert" message:@"Test Message" cancelButtonTitle:@"Cancel" otherButtonTitles:@[@"First Other",@"Second Other"] tapBlock:self.tapBlock];
+
+    /*
     [UIAlertController showAlertInViewController:self
                                        withTitle:@"Test Alert"
                                          message:@"Test Message"
@@ -44,6 +47,7 @@
                           destructiveButtonTitle:@"Delete"
                                otherButtonTitles:@[@"First Other", @"Second Other"]
                                         tapBlock:self.tapBlock];
+     */
 }
 
 - (IBAction)showActionSheet:(UIButton *)sender
@@ -64,8 +68,8 @@
                                               tapBlock:self.tapBlock];
 }
 
-- (IBAction)showAlertOverPresentedViewController
-{
+- (IBAction)showAlertOverPresentedViewController {
+    
     UIViewController *vc2 = [SecondViewController new];
     [self presentViewController:vc2 animated:YES completion:^{
         UIViewController *vc3 = [ThirdViewController new];
@@ -83,9 +87,7 @@
                                                     }];
                                                 }];
         }];
-        
     }];
 }
-
 
 @end

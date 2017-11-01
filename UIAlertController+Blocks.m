@@ -30,8 +30,8 @@
 #import "UIAlertController+Window.h"
 
 static NSInteger const UIAlertControllerBlocksCancelButtonIndex = 0;
-static NSInteger const UIAlertControllerBlocksDestructiveButtonIndex = 1;
-static NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 2;
+static NSInteger const UIAlertControllerBlocksDestructiveButtonIndex = -1;
+static NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 1;
 
 @interface UIViewController (UACB_Topmost)
 

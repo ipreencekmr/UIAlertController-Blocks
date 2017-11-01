@@ -73,6 +73,7 @@ typedef void (^UIAlertControllerCompletionBlock) (UIAlertController * __nonnull 
 #endif
                                                tapBlock:(nullable UIAlertControllerCompletionBlock)tapBlock;
 
+- (void)dismissAfterDelay:(CGFloat )delay;
 
 @property (readonly, nonatomic) BOOL visible;
 @property (readonly, nonatomic) NSInteger cancelButtonIndex;

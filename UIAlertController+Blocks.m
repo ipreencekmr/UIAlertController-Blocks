@@ -211,6 +211,12 @@ static NSInteger const UIAlertControllerBlocksFirstOtherButtonIndex = 2;
     return UIAlertControllerBlocksDestructiveButtonIndex;
 }
 
+- (void)dismissAfterDelay:(CGFloat )delay {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, delay * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        [self dismissViewControllerAnimated:true completion:nil];
+    });
+}
+
 @end
 
 @implementation UIViewController (UACB_Topmost)

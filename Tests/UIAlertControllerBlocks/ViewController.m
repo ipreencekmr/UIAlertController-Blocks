@@ -37,7 +37,11 @@
 
 - (IBAction)showAlert:(id)sender {
     
-    [UIAlertController showWithTitle:@"T TEST Alert" message:@"Test Message" cancelButtonTitle:@"Cancel" otherButtonTitles:@[@"First Other",@"Second Other"] tapBlock:self.tapBlock];
+  UIAlertController *aC = [UIAlertController showWithTitle:@"T TEST Alert" message:@"Test Message" cancelButtonTitle:@"Cancel" otherButtonTitles:@[@"First Other",@"Second Other"] tapBlock:^(UIAlertController * _Nonnull controller, UIAlertAction * _Nonnull action, NSInteger buttonIndex) {
+        
+    }];
+    
+    [aC dismissAfterDelay:1.0];
 
     /*
     [UIAlertController showAlertInViewController:self
